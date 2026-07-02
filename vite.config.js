@@ -4,9 +4,4 @@ import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
   plugins: [react(), svgr()],
-  server: {
-    watch: {
-      usePolling: true, // Força a verificação de mudanças
-    },
-  },
 });
