@@ -7,6 +7,7 @@ import LoginPasswordReset from "./LoginPasswordReset.jsx";
 import { UserContext } from "../../UserContext";
 import styles from "./Login.module.css";
 import NotFound from "../NotFound.jsx";
+import Head from "../Helper/Head.jsx";
 
 const Login = () => {
   const { login } = React.useContext(UserContext);
@@ -14,6 +15,7 @@ const Login = () => {
   if (login === true) return <Navigate to="/conta" />;
   return (
     <section className={styles.login}>
+      <Head title="Login" description="Página de login do site Dogs" />
       <div className={styles.forms}>
         <Routes>
           <Route path="/" element={<LoginForm />} />
