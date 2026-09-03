@@ -7,6 +7,7 @@ const Feed = ({ user = 0 }) => {
   const [modalPhoto, setModalPhoto] = React.useState(null);
   const [pages, setPages] = React.useState([1]);
   const [infinite, setInfinite] = React.useState(true);
+  const [photoUpdate, setPhotoUpdate] = React.useState(null);
 
   React.useEffect(() => {
     let wait = false;
@@ -35,7 +36,11 @@ const Feed = ({ user = 0 }) => {
   return (
     <div>
       {modalPhoto && (
-        <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
+        <FeedModal
+          photo={modalPhoto}
+          setModalPhoto={setModalPhoto}
+          setPhotoUpdate={setPhotoUpdate}
+        />
       )}
       {pages.map((page) => (
         <FeedPhotos
@@ -44,6 +49,7 @@ const Feed = ({ user = 0 }) => {
           page={page}
           setModalPhoto={setModalPhoto}
           setInfinite={setInfinite}
+          photoUpdate={photoUpdate}
         />
       ))}
     </div>

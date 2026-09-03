@@ -1,4 +1,3 @@
-// import React from "react";
 import Input from "../Forms/Input";
 import Button from "../Forms/Button";
 import useForm from "../../Hooks/useForm";
@@ -23,7 +22,7 @@ const LoginPasswordLost = () => {
   }
 
   return (
-    <section>
+    <section className="animeLeft">
       <Head
         title="Perdeu a senha?"
         description="Página de recuperação de senha do site Dogs"
