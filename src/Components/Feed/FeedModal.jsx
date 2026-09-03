@@ -6,13 +6,22 @@ import Loading from "../Helper/Loading";
 import { PHOTO_GET } from "../../api";
 import PhotoContent from "../Photo/PhotoContent";
 
-const FeedModal = ({ photo, setModalPhoto }) => {
+const FeedModal = ({ photo, setModalPhoto, setPhotoUpdate }) => {
   const { data, error, loading, request } = useFetch();
 
   React.useEffect(() => {
     const { url, options } = PHOTO_GET(photo.id);
-    request(url, options);
-  }, [photo, request]);
+
+    async function fetchPhoto() {
+      const { response, json } = await request(url, options);
+
+      if (response && response.ok) {
+        setPhotoUpdate(json.photo);
+      }
+    }
+
+    fetchPhoto();
+  }, [photo, request, setPhotoUpdate]);
 
   function handleOutsideClick(event) {
     if (event.target === event.currentTarget) setModalPhoto(null);

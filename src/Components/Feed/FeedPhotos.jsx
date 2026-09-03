@@ -6,7 +6,13 @@ import Error from "../Helper/Error";
 import Loading from "../Helper/Loading";
 import styles from "./FeedPhotos.module.css";
 
-const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
+const FeedPhotos = ({
+  page,
+  user,
+  setModalPhoto,
+  setInfinite,
+  photoUpdate,
+}) => {
   const { data, loading, error, request } = useFetch();
 
   React.useEffect(() => {
@@ -27,7 +33,7 @@ const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
         {data.map((photo) => (
           <FeedPhotosItem
             key={photo.id}
-            photo={photo}
+            photo={photoUpdate?.id === photo.id ? photoUpdate : photo}
             setModalPhoto={setModalPhoto}
           />
         ))}
