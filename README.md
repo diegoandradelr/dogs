@@ -10,6 +10,20 @@ Durante o desenvolvimento, foram aplicados conceitos como componentes, Hooks, Co
 
 Além dos conceitos apresentados no curso, o projeto recebeu ajustes e melhorias durante o desenvolvimento, incluindo configurações necessárias para publicação e funcionamento em produção na Vercel.
 
+📸 Screenshots
+
+Feed
+
+![Feed do Dogs](./img/home.png)
+
+Perfil
+
+![Perfil do usuário](./img/perfil.png)
+
+Estatísticas
+
+![Estatísticas do usuário](./img/estatisticas.png)
+
 ✨ Funcionalidades
 
 - Cadastro de usuários
